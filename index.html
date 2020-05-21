@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+
+<!-- code by @OpenEyez -->
+<html>
+	<head>
+		<title>百度一下</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			/*
+ *　　　　　　　　┏┓　　　┏┓+ +
+ *　　　　　　　┏┛┻━━━┛┻┓ + +
+ *　　　　　　　┃　　　　　　　┃ 　
+ *　　　　　　　┃　　　━　　　┃ ++ + + +
+ *　　　　　　 ████━████ ┃+
+ *　　　　　　　┃　　　　　　　┃ +
+ *　　　　　　　┃　　　┻　　　┃
+ *　　　　　　　┃　　　　　　　┃ + +
+ *　　　　　　　┗━┓　　　┏━┛
+ *　　　　　　　　　┃　　　┃　　　　　　　　　　　
+ *　　　　　　　　　┃　　　┃ + + + +
+ *　　　　　　　　　┃　　　┃　　　　Code is far away from bug with the animal protecting
+ *　　　　　　　　　┃　　　┃ + 　　　　神兽保佑,代码无bug　　
+ *　　　　　　　　　┃　　　┃
+ *　　　　　　　　　┃　　　┃　　+　　　　　　　　　
+ *　　　　　　　　　┃　 　　┗━━━┓ + +
+ *　　　　　　　　　┃ 　　　　　　　┣┓
+ *　　　　　　　　　┃ 　　　　　　　┏┛
+ *　　　　　　　　　┗┓┓┏━┳┓┏┛ + + + +
+ *　　　　　　　　　　┃┫┫　┃┫┫
+ *　　　　　　　　　　┗┻┛　┗┻┛+ + + +
+ */
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.back {
+				background: url("https://dss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/62.jpg?2");
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				min-width: 1000px;
+				z-index: -10;
+				zoom: 1;
+				background-color: #fff;
+				background-repeat: no-repeat;
+				background-size: cover;
+				-webkit-background-size: cover;
+				-o-background-size: cover;
+				background-position: center 0;
+			}
+
+			.na1 {
+				width: 60px;
+				height: 60px;
+				text-align: center;
+				font-size: 13px;
+				line-height: 60px;
+				color: #FFFFFF;
+				cursor: pointer;
+			}
+
+			.na2 {
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				font-size: 12px;
+				line-height: 40px;
+				color: #FFFFFF;
+				cursor: pointer;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div class="back">
+		</div>
+
+		<div class="box1" style="display:flex;height: 60px;background:rgba(0,0,0,0.2);">
+			<div style="display: flex;justify-content:flex-start;width: 50%;">
+				<span class="na1" id="新闻">新闻</span>
+				<span class="na1" id="hao123">hao123</span>
+				<span class="na1" id="地图">地图</span>
+				<span class="na1" id="视频">视频</span>
+				<span class="na1" id="贴吧">贴吧</span>
+				<span class="na1" id="学术">学术</span>
+				<span class="na1" id="更多">更多</span>
+			</div>
+			<div style="display: flex;justify-content:flex-end;width: 50%;">
+				<span class="na1" id="抗击肺炎" style="color: crimson;">抗击肺炎</span>
+				<span class="na1" id="成都">成都</span>
+				<span class="na1" id="天气">天气</span>
+				<span class="na1" id="设置">设置</span>
+			</div>
+		</div>
+
+		<center>
+			<img src="https://www.baidu.com/img/pc_cc75653cd975aea6d4ba1f59b3697455.png" width="270px" style="margin-top: 120px;" />
+			<div style="background-color: #FFFFFF;width: 655px;height: 42px;border: 0px #FFFFFF solid;border-radius: 12px;display: flex;justify-content:flex-end;margin-top: 20px;">
+
+				<input type="text" id="in" name="in" onkeypress="getKey(event)" style="width: 545px;border: 0;outline: none;background-color: rgba(0, 0, 0, 0);padding-left: 20px;" />
+
+				<div style="width: 110px;height: 42px;background-color: #CCCCCC;border: 0px #CCCCCC solid;border-radius: 12px;line-height: 42px;text-align: center;border-top-left-radius:0px;border-bottom-left-radius: 0px;">
+					<span id="baidu">百度一下</span>
+				</div>
+
+			</div>
+		</center>
+
+
+		<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+		<script>
+			
+			//搜索按钮点击搜索功能
+			baidu = document.getElementById('baidu');
+			baidu.onclick = function() {
+				var baidu_url = "https://www.baidu.com/s?wd=";
+				var str = document.getElementById("in").value;
+				var str_url = baidu_url + str;
+				window.open(str_url);
+			}
+			
+			
+			//回车搜索功能
+			function getKey(event) {
+			            if (event.keyCode == 13) {
+							var baidu_url = "https://www.baidu.com/s?wd=";
+							var str = document.getElementById("in").value;
+							var str_url = baidu_url + str;
+							window.open(str_url);	
+			                refund();
+			            }
+			  }
+		
+
+			//新闻点击事件
+			新闻 = document.getElementById('新闻');
+			新闻.onclick = function() {
+				window.open("http://news.baidu.com/");
+			}
+
+			//hao123点击事件
+			hao123 = document.getElementById('hao123');
+			hao123.onclick = function() {
+				window.open("https://www.hao123.com/");
+			}
+
+			//地图点击事件
+			地图 = document.getElementById('地图');
+			地图.onclick = function() {
+				window.open("https://map.baidu.com/");
+			}
+
+			//视频点击事件
+			视频 = document.getElementById('视频');
+			视频.onclick = function() {
+				window.open("https://haokan.baidu.com/?sfrom=baidu-top");
+			}
+
+			//贴吧点击事件
+			贴吧 = document.getElementById('贴吧');
+			贴吧.onclick = function() {
+				window.open("https://tieba.baidu.com/index.html");
+			}
+
+			//学术点击事件
+			学术 = document.getElementById('学术');
+			学术.onclick = function() {
+				window.open("https://xueshu.baidu.com/");
+			}
+
+			//更多点击事件
+			更多 = document.getElementById('更多');
+			更多.onclick = function() {
+				alert("功能暂未开发");
+			}
+
+			//抗击肺炎点击事件
+			抗击肺炎 = document.getElementById('抗击肺炎');
+			抗击肺炎.onclick = function() {
+				window.open("https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1");
+			}
+
+			//成都点击事件
+			成都 = document.getElementById('成都');
+			成都.onclick = function() {
+				window.open(
+					"https://www.baidu.com/s?tn=baidutop10&rsv_idx=2&wd=%E6%88%90%E9%83%BD%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5");
+			}
+
+			//天气点击事件
+			天气 = document.getElementById('天气');
+			天气.onclick = function() {
+				window.open(
+					"https://www.baidu.com/s?tn=baidutop10&rsv_idx=2&wd=%E6%88%90%E9%83%BD%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5");
+			}
+
+			//设置点击事件
+			设置 = document.getElementById('设置');
+			设置.onclick = function() {
+				alert("功能暂未开发");
+			}
+		</script>
+
+
+	</body>
+</html>
